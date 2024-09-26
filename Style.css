@@ -1,0 +1,61 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+h1 {
+  margin-bottom: 20px;
+  color: #343a40;
+}
+.form-section {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+label {
+  font-weight: bold;
+}
+button {
+  margin-top: 15px;
+}
+
+/* Estiliza o container do select gerado pelo select2 */
+.select2-container--default .select2-selection--single {
+  display: block !important;
+  width: 100% !important;
+  height: calc(1.5em + .75rem + 2px) !important;
+  padding: .375rem .75rem !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: #495057 !important;
+  background-color: #fff !important;
+  background-clip: padding-box !important;
+  border: 1px solid #ced4da !important;
+  border-radius: .25rem !important;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out !important;
+}
+
+/* Estiliza a área onde a opção selecionada é exibida */
+.select2-container--default .select2-selection__rendered {
+  color: #495057 !important;
+  padding-left: 0 !important;
+}
+
+/* Estiliza a seta (ícone) que aparece no dropdown do select */
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: calc(1.5em + .75rem + 2px) !important;
+}
+  
+.select2-container--default .select2-selection--single {
+  height: calc(2.25rem + 2px);
+}
+
+/* Estiliza o campo do number para tirar as setas de aumentar e diminuir */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

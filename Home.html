@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Script.js"></script>
+    <link rel="stylesheet" href="Style.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+    <title>Cadastro de Filial e Processo de Entrega</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h1>Cadastro de Filial</h1>
+            <form id="cadastroFilial" onsubmit="cadastrarFilial(event)">
+                <div class="form-group">
+                    <label for="codigoFilial">Código:</label>
+                    <input type="number" id="codigoFilial" name="codigoFilial" class="form-control" required min="0" step="1" oninput="evitarLetraE()">
+                </div>
+
+                <div class="form-group">
+                    <label for="nomeFilial">Nome:</label>
+                    <input type="text" id="nomeFilial" name="nomeFilial" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="enderecoFilial">Endereço:</label>
+                    <input type="text" id="enderecoFilial" name="enderecoFilial" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="responsavelFilial">Responsável Almoxarifado:</label>
+                    <select id="responsavelFilial" class="form-control" required>
+                        <option value="">Selecione um responsável</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Cadastrar Filial</button>
+            </form>
+        </div>
+
+        <div class="form-section">
+            <h1>Processo de Entrega</h1>
+            <form id="processoEntrega" onsubmit="cadastrarEntrega(event)">
+                <div class="form-group">
+                    <label for="cepOrigem">CEP de Origem:</label>
+                    <div class="input-group">
+                        <input type="text" id="cepOrigem" name="cepOrigem" class="form-control" required>
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-outline-secondary" onclick="buscarCEP()">Buscar CEP</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="ruaOrigem">Rua (Preenchido automaticamente):</label>
+                    <input type="text" id="ruaOrigem" name="ruaOrigem" class="form-control" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="cidadeOrigem">Cidade (Preenchido automaticamente):</label>
+                    <input type="text" id="cidadeOrigem" name="cidadeOrigem" class="form-control" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="estadoOrigem">Estado (Preenchido automaticamente):</label>
+                    <input type="text" id="estadoOrigem" name="estadoOrigem" class="form-control" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="filialDestino">Filial de Destino:</label>
+                    <select id="filialDestino" class="form-control" required>
+                        <option value="">Selecione uma filial</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="prazoEntrega">Prazo da Entrega:</label>
+                    <input type="date" id="prazoEntrega" name="prazoEntrega" class="form-control" required onclick="abrirCalendario()">
+                </div>
+
+                <div class="form-group">
+                    <label for="descricaoMercadoria">Descrição da Mercadoria:</label>
+                    <textarea id="descricaoMercadoria" name="descricaoMercadoria" class="form-control" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-success">Confirmar Entrega</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
